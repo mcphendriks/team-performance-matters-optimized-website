@@ -1,0 +1,35 @@
+{
+  "name": "team-performance-matters-optimized-website",
+  "version": "1.0.0",
+  "description": "Ontwerp en maak met een team een website voor een opdrachtgever waarbij je verschillende peformance technieken toepast",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mcphendriks/team-performance-matters-optimized-website.git"
+  },
+  "keywords": [
+    "node",
+    "express",
+    "ejs",
+    "dotenv",
+    "rest",
+    "api"
+  ],
+  "author": "Michelle Hendriks",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mcphendriks/team-performance-matters-optimized-website/issues"
+  },
+  "homepage": "https://github.com/mcphendriks/team-performance-matters-optimized-website#readme",
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "nodemon": "^2.0.22"
+  }
+}
