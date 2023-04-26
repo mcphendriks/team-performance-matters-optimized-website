@@ -1,81 +1,94 @@
-<main>
-    <section class="headline">
-        <div class="headline-content">
-            <h1>Hi, Plant ruilen of doneren?</h1>
-            <p>
-                Ben je op zoek naar een prachtig nieuw plantje om aan je collectie toe te
-                voegen? Of heb je al een aantal groene vrienden thuis en wil je deze
-                ruilen met je mede buurtbewoners? Dan ben je hier aan het perfecte
-                adres! Je kunt nu eenvoudig je stekje uploaden of reserveren en deze
-                ophalen bij de OBA in de gezellige Linnaeusstraat. Waar wacht je nog op?
-                Laat je groene vingers wapperen en voeg een nieuwe aanwinst toe aan je
-                verzameling!
-            </p>
-            <div class="headline-buttons">
-                <a href="/aanmelden" aria-label="stekje toevoegen">Doneren</a>
-                <a href="#planten" aria-label="bekijk beschikbare stekjes">Bekijk beschikbaren planten</a>
+<%- include('./partials/head.ejs') %>
+
+    <main>
+        <section class="headline">
+            <div class="headline-content">
+                <h1>Hi, Plant ruilen of doneren?</h1>
+                <p>
+                    Ben je op zoek naar een prachtig nieuw plantje om aan je collectie toe te
+                    voegen? Of heb je al een aantal groene vrienden thuis en wil je deze
+                    ruilen met je mede buurtbewoners? Dan ben je hier aan het perfecte
+                    adres! Je kunt nu eenvoudig je stekje uploaden of reserveren en deze
+                    ophalen bij de OBA in de gezellige Linnaeusstraat. Waar wacht je nog op?
+                    Laat je groene vingers wapperen en voeg een nieuwe aanwinst toe aan je
+                    verzameling!
+                </p>
+                <div class="headline-buttons">
+                    <a href="/aanmelden" aria-label="stekje toevoegen">Doneren</a>
+                    <a href="#planten" aria-label="bekijk beschikbare stekjes">Bekijk beschikbaren planten</a>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
 
 
-    <section class="bar">
-        <div class="bar-content">
-            <div class="filter-btn">
-                <button type="button">
-                    Filter<span><svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
-                            <path fill-rule="evenodd"
-                                d="M1 3.5a.5.5 0 0 1 .5-.5h13a.5.5 0 0 1 0 1h-13a.5.5 0 0 1-.5-.5zM8 6a.5.5 0 0 1 .5.5v5.793l2.146-2.147a.5.5 0 0 1 .708.708l-3 3a.5.5 0 0 1-.708 0l-3-3a.5.5 0 0 1 .708-.708L7.5 12.293V6.5A.5.5 0 0 1 8 6z" />
-                        </svg></span>
-                </button>
-            </div>
-            <div class="drop-content">
-                <ul class="drop-list">
-                    <li>
+        <section class="bar">
+            <div class="bar-content">
+                <div class="filter-btn">
+                    <button type="button">
+                        Filter<span><svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd"
+                                    d="M1 3.5a.5.5 0 0 1 .5-.5h13a.5.5 0 0 1 0 1h-13a.5.5 0 0 1-.5-.5zM8 6a.5.5 0 0 1 .5.5v5.793l2.146-2.147a.5.5 0 0 1 .708.708l-3 3a.5.5 0 0 1-.708 0l-3-3a.5.5 0 0 1 .708-.708L7.5 12.293V6.5A.5.5 0 0 1 8 6z" />
+                            </svg></span>
+                    </button>
+                </div>
+                <div class="drop-content">
+                    <ul class="drop-list">
+                        <li>
+                            <span>Verzorging</span>
+                            <div class="drop-li-options">
+                                <label>
+                                    <input type="radio" name="difficulty" value="all">
+                                    <span>Alle moeilijkheidsgraden</span>
+                                </label>
+                                <label>
+                                    <input type="radio" name="difficulty" value="false">
+                                    <span>Makkelijk</span>
+                                </label>
+                                <label>
+                                    <input type="radio" name="difficulty" value="true">
+                                    <span>Moeilijk</span>
+                                </label>
+                        </li>
+                </div>
+                <li> <span>Water</span>
+                    <div class="drop-li-options">
                         <label>
-                            <input type="checkbox">
-                            <span>Voeding</span></label>
-                    </li>
-                    <li>
+                            <input type="checkbox" checked>
+                            <span>Veel water</span>
+                        </label>
                         <label>
-                            <input type="checkbox">
-                            <span>Water</span></label>
-                    </li>
-                    <li>
+                            <input type="checkbox" checked>
+                            <span>Weinig water</span>
+                        </label>
+                </li>
+                <li> <span>Standplaats</span>
+                    <div class="drop-li-options">
                         <label>
-                            <input type="checkbox">
-                            <span>Giftig</span></label>
-                    </li>
-                    <li>
+                            <input type="checkbox" checked>
+                            <span>Binnenplant</span>
+                        </label>
                         <label>
-                            <input type="checkbox">
-                            <span>Licht</span></label>
-                    </li>
-                    <li>
-                        <label>
-                            <input type="checkbox">
-                            <span>Standplaats</span></label>
-                    </li>
-                </ul>
+                            <input type="checkbox" checked>
+                            <span>Buitenplant</span>
+                        </label>
+                </li>
             </div>
 
-            <div class="bar-search-form">
-                <form action="/">
-                    <svg fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path fill-rule="evenodd" clip-rule="evenodd"
-                            d="M10 4a6 6 0 1 0 0 12 6 6 0 0 0 0-12zm-8 6a8 8 0 1 1 16 0 8 8 0 0 1-16 0zM16.293 16.293a1 1 0 0 1 1.414 0l4 4a1 1 0 0 1-1.414 1.414l-4-4a1 1 0 0 1 0-1.414z" />
-                    </svg>
-                    <input type="search" placeholder="zoek op stek naam">
-                </form>
-            </div>
-        </div>
-    </section>
-    <h2>Stekjesbieb</h2>
 
-    <section class="plant-container" id="planten">
-        <% stekjes.forEach(stekje=> { %>
-            <article class="plant-card" aria-label="Beschikbaar stekje">
-                <ul>
+
+            </ul>
+            </div>
+
+        </section>
+        <h2>Stekjesbieb</h2>
+
+        <section class="plant-container" id="planten">
+            <% stekjes.forEach(stekje=> { %>
+                <article class="plant-card" aria-label="Beschikbaar stekje" <% stekje.filters.forEach(filter=> { %>
+                    data-<%-filter.filter%>="<%-filter.value%>"
+                            <% }) %>
+                                >
+                                <!-- <ul>
                     <li>
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="2"
                             stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
@@ -115,67 +128,81 @@
                             </path>
                         </svg>
                     </li>
-                </ul>
-                <% if (stekjes.fotos) { %>
-                    <img src="<%= stekjes.fotos%>" loading="lazy" alt="beschikbaar stekjes" width="250" height="250">
-                    <% }else{ %>
-                        <img src="https://static.vecteezy.com/ti/gratis-vector/p3/3315945-cartoon-illustratie-van-plantenpot-met-het-vraagteken-gratis-vector.jpg"
-                            width="250" height="250" alt="beschikbaar stekje">
-                        <% } %>
-                            <div class="plant-card-content">
-                                <!-- <p class="data-upload">
-                                    <%= stekje.aanmelddatum %>
-                                </p> -->
-                                <h3>
-                                    <%= stekje.naam %>
-                                </h3>
-                                <a href="plantReservation">Reserveer</a>
-                            </div>
-            </article>
-            <% }) %>
-    </section>
+                </ul> -->
+                                <% if (stekjes.fotos) { %>
+                                    <img src="<%= stekjes.fotos%>" loading="lazy" alt="beschikbaar stekjes" width="250"
+                                        height="250">
+                                    <% }else{ %>
+                                        <img src="/assets/plant.jpeg" loading="lazy" width="250" height="250"
+                                            alt="beschikbaren plant">
+                                        <% } %>
+                                            <div class="plant-card-content">
+                                                <%= stekje.aanmelddatum %>
+                                                    <h3>
+                                                        <%= stekje.naam %>
+                                                    </h3>
+                                                    <ul>
+                                                        <% stekje.filters.forEach((filter)=> { %>
+                                                            <li>
+                                                                <%- filter.label %>
+                                                                    <% if (filter.filter=='difficult' &&
+                                                                        filter.value==true) { %>
+                                                                        <!-- svgtsj voor moeilijke planten -->
+                                                                        <% } %>
+                                                            </li>
+                                                            <% }) %>
+                                                    </ul>
+                                                    <a href="/plantReservation">Reserveer</a>
+                                            </div>
+                </article>
+                <% }) %>
+        </section>
 
-    <h2>Plant ophalen?</h2>
+        <h2>Plant ophalen?</h2>
 
-    <section class="info-container" id="info-container">
-        <div class="info-content">
-            <div class="info-list">
-                <img width="200" height="200" src="assets/Buurtcampus54.svg" alt="illustratie laptop">
-                <p>
-                    Vanaf je luie stoel, bank of hangmat jouw stekje reserveren online of
-                    jouw stekje uploaden zodat je buurtbewoners weer kunnen zorgen voor jouw
-                    plantje
-                </p>
+        <section class="info-container" id="info-container">
+            <div class="info-content">
+                <div class="info-list">
+                    <img loading="lazy" width="200" height="200" src="assets/Buurtcampus54.svg"
+                        alt="illustratie laptop">
+                    <p>
+                        Vanaf je luie stoel, bank of hangmat jouw stekje reserveren online of
+                        jouw stekje uploaden zodat je buurtbewoners weer kunnen zorgen voor jouw
+                        plantje
+                    </p>
+                </div>
+
+                <div class="info-list">
+                    <img loading="lazy" width="200" height="200" src="assets/Buurtcampus58.svg"
+                        alt="illustratie buurtcampus locatie">
+                    <p>
+                        Haal jouw gereserveerde stekje op of breng deze langs wanneer je een stekje gedoneerd hebt,
+                        terwijl je door het bruisende Amsterdam-Oost wandelt naar <a
+                            href="https://www.google.com/maps?ll=52.358205,4.926217&z=15&t=m&hl=nl-NL&gl=US&mapclient=embed&cid=2955844329675547516">OBA
+                            Linnaeusstraat 44</a>
+                    </p>
+                </div>
+
+                <div class="info-list">
+                    <img loading="lazy" width="200" height="200" src="assets/Buurtcampus71.svg"
+                        alt="illustratie stekje doneren">
+                    <p>
+                        Vanaf je luie stoel, bank of hangmat jouw stekje reserver online of jouw
+                        stekje uploaden zodat je buurtbewoners weer kunnen zorgen voor jouw
+                        plantje
+                    </p>
+                </div>
+
+                <div class="info-list">
+                    <img loading="lazy" width="200" height="200" src="assets/Buurtcampus66.svg" alt="stekje meenemen">
+                    <p>
+                        Vanaf je luie stoel, bank of hangmat jouw stekje reserver online of jouw
+                        stekje uploaden zodat je buurtbewoners weer kunnen zorgen voor jouw
+                        stekje
+                    </p>
+                </div>
             </div>
+        </section>
 
-            <div class="info-list">
-                <img width="200" height="200" src="assets/Buurtcampus58.svg" alt="illustratie buurtcampus locatie">
-                <p>
-                    Haal jouw gereserveerde stekje op of breng deze langs wanneer je een stekje gedoneerd hebt,
-                    terwijl je door het bruisende Amsterdam-Oost wandelt naar <a
-                        href="https://www.google.com/maps?ll=52.358205,4.926217&z=15&t=m&hl=nl-NL&gl=US&mapclient=embed&cid=2955844329675547516">OBA
-                        Linnaeusstraat 44</a>
-                </p>
-            </div>
-
-            <div class="info-list">
-                <img width="200" height="200" src="assets/Buurtcampus71.svg" alt="illustratie stekje doneren">
-                <p>
-                    Vanaf je luie stoel, bank of hangmat jouw stekje reserver online of jouw
-                    stekje uploaden zodat je buurtbewoners weer kunnen zorgen voor jouw
-                    plantje
-                </p>
-            </div>
-
-            <div class="info-list">
-                <img width="200" height="200" src="assets/Buurtcampus66.svg" alt="stekje meenemen">
-                <p>
-                    Vanaf je luie stoel, bank of hangmat jouw stekje reserver online of jouw
-                    stekje uploaden zodat je buurtbewoners weer kunnen zorgen voor jouw
-                    stekje
-                </p>
-            </div>
-        </div>
-    </section>
-
-</main>
+    </main>
+    <%- include('./partials/foot.ejs') %>
