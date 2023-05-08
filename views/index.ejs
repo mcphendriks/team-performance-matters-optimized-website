@@ -75,7 +75,7 @@
     <section class="plant-container" id="planten">
         <% stekjes.forEach(stekje=> { %>
             <article class="plant-card" aria-label="Beschikbaar stekje">
-                <ul>
+                <!-- <ul>
                     <li>
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="2"
                             stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
@@ -115,7 +115,7 @@
                             </path>
                         </svg>
                     </li>
-                </ul>
+                </ul> -->
                 <% if (stekjes.fotos) { %>
                     <img src="<%= stekjes.fotos%>" loading="lazy" alt="beschikbaar stekjes" width="250" height="250">
                     <% }else{ %>
@@ -129,7 +129,7 @@
                                 <h3>
                                     <%= stekje.naam %>
                                 </h3>
-                                <a href="plantReservation">Reserveer</a>
+                                <a href="/plant">Reserveer</a>
                             </div>
             </article>
             <% }) %>
