@@ -1,3 +1,4 @@
+import fetch from "node-fetch";
 /**
  * fetchJson() is a wrapper for the experimental node fetch api. It fetches the url
  * passed as a parameter and returns the response body parsed through json.
