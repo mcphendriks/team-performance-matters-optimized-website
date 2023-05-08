@@ -1,3 +1,59 @@
 <%- include('./partials/head.ejs') %>
-<h2>reserveer plant</h2>
+<h2>reserveer plantjes</h2>
+<!-- form -->
+<form action="post">
+    <section class="volgende">
+        <h3> Gegevens plant</h3>
+
+        <label for="naam">Plant naam</label>
+        <input type="text" name="naam" id="naam">
+
+        <label for="landvanherkomst">Land van herkomst</label>
+        <select name="landvanherkomst" id="landvanherkomst">
+            <!-- placeholder is selected en disable -->
+            <option value="" disabled selected>Land van herkomst</option>
+            <option value="Argentina">Argentinië</option>
+            <option value="Bolivia">Bolivia</option>
+            <option value="Brazil">Brazilië</option>
+            <option value="Chile">Chili</option>
+            <option value="Colombia">Colombia</option>
+            <option value="Ecuador">Ecuador</option>
+            <option value="Falkland Islands (Malvinas)">Falklandeilanden (Malvinas)</option>
+            <option value="French Guiana">Frans Guyana</option>
+            <option value="Guyana">Guyana</option>
+            <option value="Paraguay">Paraguay</option>
+            <option value="Peru">Peru</option>
+            <option value="Suriname">Suriname</option>
+            <option value="Uruguay">Uruguay</option>
+            <option value="Venezuela">Venezuela</option>
+    </section>
+  
+
+    <section class="volgende">
+        <h3> Verzorging plant</h3>
+        
+        <label for="verpotten">verpotten</label>
+        <input type="text" name="verpotten" id="verpotten">
+
+        <label for="standplaats">Standplaats</label>
+        <input type="text" name="standplaats" id="standplaats">
+
+        <label for="giftig">Giftig</label>
+        <input type="text" name="giftig" id="giftig">
+
+        <label for="voeding">Giftig</label>
+        <input type="text" name="voeding" id="voeding">
+    </section>
+    <section class="volgende">
+        <h3> Upload plant plant</h3>
+        <!-- accepteer alleen img files door het neet te geven in de accept tag -->
+         <input type="file" name="fotos" id="fotos" accept="image/*" >
+        </select>
+    </section>
+
+    <button>Volgende stap</button>
+    
+
+
+</form>
     <%- include('./partials/foot.ejs') %>
