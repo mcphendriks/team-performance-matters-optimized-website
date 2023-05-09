@@ -1,0 +1,93 @@
+main{
+    margin: 40em;
+}
+h3{
+    margin-bottom: 1em;
+}
+form, input, select, .tab{
+    display: flex;
+    flex-direction: column;
+    margin: 1em;
+    text-align: left;
+}
+.tab {
+    width: 37em;
+    height: 14em;
+    margin: 1em -1em 4em;
+}
+button{
+    width: 10em;
+    height: 3em;
+    border-radius: 3px;
+    margin: 7em;
+    margin-bottom: 4em;
+}
+
+input, select{
+    width: 20em;
+    height: 2.5em;
+    border-radius: 3px;
+    border: 1px solid black;
+}
+
+#fotos {
+    width: 20em;
+    height: 20em;
+    border: 4px solid #000;
+    background-image: url("http://kmtlondon.com/img/upload.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 64px 64px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    filter: alpha(opacity=50);
+    -khtml-opacity: 0.5;
+    -moz-opacity: 0.5;
+    opacity: 0.5;
+    text-align: center;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between ;
+    
+}
+
+ 
+  /* Mark input boxes that gets an error on validation: */
+  input.invalid {
+    background-color: #ffdddd;
+  }
+  
+  /* Hide all steps by default: */
+  .tab {
+    display: none;
+  }
+  
+  /* Make circles that indicate the steps of the form: */
+  .step {
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbbbbb;
+    border: none;
+    border-radius: 50%;
+    display: inline-block;
+    opacity: 0.5;
+  }
+  
+  /* Mark the active step: */
+  .step.active {
+    opacity: 1;
+  }
+  
+  /* Mark the steps that are finished and valid: */
+  .step.finish {
+    background-color: #4E7141;
+  }
+  
+
+
+
