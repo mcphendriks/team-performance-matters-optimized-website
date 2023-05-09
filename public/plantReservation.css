@@ -1,0 +1,127 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* ================ ROOT/CUSTOM PROPERTIES ================ */
+
+:root {
+
+    --form-padding: 1rem;
+    --form-margin: 1rem;
+
+    --color-form-info-text: rgb(127, 127, 127);
+}
+
+
+#wrapper-form-page {
+    margin: var(--form-margin);
+}
+
+
+/* ================ RESERVATION FORM STYLING ================ */
+
+
+#reservation-form {
+    display: flex;
+    flex-direction: column;
+    margin-top: 1rem;
+    padding: var(--form-padding);
+    border: solid 1px black; 
+}
+
+#reservation-form h2 {
+    display: flex;
+    justify-content: center;
+}
+
+#reservation-form legend {
+    /* padding: var(--form-padding); */
+}
+
+#reservation-form label {
+    display: flex;
+    flex-direction: row;
+    margin-top: 1rem;
+}
+
+#reservation-form label .verplicht-veld  {
+    color: red;
+}
+
+#reservation-form input[required] {
+    background-color: red;
+  }
+
+
+#reservation-form input {
+    margin-top: 1rem;
+}
+
+.datum-aanvullende-info {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.datum-aanvullende-info p {
+    color: var(--color-form-info-text);
+}
+
+.tijd-aanvullende-info {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+#openingstijden-oba {
+    display:flex;
+    flex-direction: column;
+}
+
+#openingstijden-oba p {
+    color: var(--color-form-info-text);
+}
+
+#wrapper-radiobutton-section #wrapper-radiobuttons {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+
+}
+
+
+    
+
+
+
+/* 
+.button-info {
+    padding: 1rem;
+    border-radius: 80%;
+}
+
+.button-info svg {
+    display: block;
+} */
+
+/* 
+TIME INPUT FORM (OPENINGSTIJDEN MIN 09:30 - MAX 17:30)
+- Use :valid & :invalid CSS properties to style the input. 
+- Put icons on a <span> next to the input (not on the input itself). 
+*/
+
+
+#button-back-to-homepage {
+    margin-top: 1rem;
+}
+
+
+
+/* ================ MEDIA QUERIES ================ */
