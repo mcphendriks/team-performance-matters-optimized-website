@@ -274,6 +274,7 @@ indexRoute.get("/", (request, response) => {
     response.render("index", { stekjes: filteredData }); // ten slot wordt index.ejs gerenderd met JSON-gegevens
   // ten slot wordt index.ejs gerenderd met JSON-gegevens
   });
+});
 
 
 export default indexRoute; //exporteert de route in het server.js mapje -> import indexRoute from "./routes/index.js";
