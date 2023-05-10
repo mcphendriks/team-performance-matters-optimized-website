@@ -271,6 +271,9 @@ indexRoute.get("/", (request, response) => {
     // console.log(newData);
     //vervolgens wordt de data gefetch en response gestuurd als promise die json-gegvens bevat @helpers map
     response.render("index", { stekjes: filteredData }); // ten slot wordt index.ejs gerenderd met JSON-gegevens
+    response.render("index", {
+        stekjes: data.stekjes,
+      }); // ten slot wordt index.ejs gerenderd met JSON-gegevens
   });
 });
 

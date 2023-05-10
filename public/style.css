@@ -22,6 +22,7 @@ body {
   font-family: "Arial", sans-serif;
 }
 
+plant-filtering
 h1,
 h2 {
   text-align: center;
@@ -525,3 +526,5 @@ input[type="email"] {
     display: none;
   }
 }
+
+/* main */

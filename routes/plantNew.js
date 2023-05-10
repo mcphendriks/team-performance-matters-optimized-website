@@ -1,6 +1,6 @@
-import * as dotenv from "dotenv";
-import { postJson, fetchJson } from "../helpers/fetchWrapper.js";
-import express from "express";
+import * as dotenv from "dotenv"; //haalt API link uit .env file
+import { postJson, fetchJson } from "../helpers/fetchWrapper.js";  
+import express from "express"; 
 
 dotenv.config();
 
