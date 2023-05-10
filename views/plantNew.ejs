@@ -1,12 +1,16 @@
 <%- include('./partials/head.ejs') %>
 <main>
     <h2>Doneer een plantje</h2>
-
+    <article>
+        <h4>Hulp nodig met het identificeren van je plantje? </h4>
+        <p>misschien kunnen deze linkjes je helpen:</p>
+        <section class="info-links">
+            <a href="https://identify.plantnet.org">indentify plantnet</a>
+            <a href="https://www.apartmenttherapy.com/features/houseplant-guide-encyclopedia"> houseplant enyclopedia</a>
+        </section>
+    </article>
     <form id="regForm" action="">
-
-        
         <!-- elke tab class is 1 section/stap van de multi step from.  -->
-
         <section class="tab">
             <h3> Gegevens plant</h3>
     
@@ -79,14 +83,13 @@
     <%- include('./partials/foot.ejs') %>
     <script>
 
-var currentTab = 0; // Current tab is set to be the first tab (0)
-showTab(currentTab); // Display the current tab
+var currentTab = 0; // eerste tab staat altijd op 0
+showTab(currentTab); 
 
 function showTab(n) {
   // alle tab staan uit en worden gecativeerd op basis van de aantal clicks
   var x = document.getElementsByClassName("tab");
   x[n].style.display = "block";
-  // ... and fix the Previous/Next buttons:
   if (n == 0) {
     document.getElementById("prevBtn").style.display = "none";
   } else {
