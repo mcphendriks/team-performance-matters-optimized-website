@@ -53,9 +53,12 @@ html {
     color: red;
 }
 
+/* Deze rood/rode border als iemand een veld niet heeft ingevuld */
+/* 
 #reservation-form input[required] {
     background-color: red;
-  }
+} 
+*/
 
 
 #reservation-form input {
