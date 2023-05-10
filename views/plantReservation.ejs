@@ -1,2 +1,85 @@
 <%- include('./partials/head.ejs') %>
-    <%- include('./partials/foot.ejs') %>
+
+<div id="wrapper-form-page">
+    
+    <h1>Reserveer <%-stekje.naam%>: </h1> <!-- haalt plant naam op uit API -->
+    
+    <picture>
+        <source srcset="<%-stekje.fotos[0].original%> 1024w, 
+                        <%-stekje.fotos[0].small%> 320w" 
+        >
+        <source srcset="<%-stekje.fotos[0].originalAsWebP%> 1024w ,
+                        <%-stekje.fotos[0].smallAsWebP%> 320w" 
+                        type="image/webp"
+        >
+        <img src="<%-stekje.fotos[0].original%>" sizes="" width="<%-stekje.fotos[0].width%>" height="<%-stekje.fotos[0].height%>" loading="lazy" alt="<%-stekje.naam%>"> <!-- haalt plant img op uit API -->
+    </picture>
+        
+    <form id="reservation-form" action="/" method="post">
+        <% if(locals.error !== undefined){ %>
+            <p class="message"><%= error %></p>
+        <% } %>
+
+            <legend><h2>Plantje reserveren</h2></legend>
+    
+            <label for="name">Naam <div class="verplicht-veld">*verplicht</div></label>
+            <input required type="text" name="naam" placeholder="Voor en achternaam"  value="<%= locals.values?.name ?? '' %>" />
+            
+            <label for="date">Op welke datum wil je langskomen? <div class="verplicht-veld">*verplicht</div></label>
+            <input required type="date" name="datum" placeholder="" value="" />
+            <div class="datum-aanvullende-info">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-info-circle-filled" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                        <path d="M12 2c5.523 0 10 4.477 10 10a10 10 0 0 1 -19.995 .324l-.005 -.324l.004 -.28c.148 -5.393 4.566 -9.72 9.996 -9.72zm0 9h-1l-.117 .007a1 1 0 0 0 0 1.986l.117 .007v3l.007 .117a1 1 0 0 0 .876 .876l.117 .007h1l.117 -.007a1 1 0 0 0 .876 -.876l.007 -.117l-.007 -.117a1 1 0 0 0 -.764 -.857l-.112 -.02l-.117 -.006v-3l-.007 -.117a1 1 0 0 0 -.876 -.876l-.117 -.007zm.01 -3l-.127 .007a1 1 0 0 0 0 1.986l.117 .007l.127 -.007a1 1 0 0 0 0 -1.986l-.117 -.007z" stroke-width="0" fill="currentColor"></path>
+                </svg>
+                <p>
+                    Je kunt een stekje binnen twee weken op komen halen
+                </p>
+            </div>
+    
+            <label for="time">Op welke tijd wil je langskomen? <div class="verplicht-veld">*verplicht</div></label>
+            <input required type="time" name="tijd" placeholder="09:30" value="09:30" step="900" min="09:30" max="17:15"/>
+            
+            <div class="tijd-aanvullende-info">
+                <svg type="button" xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-info-circle-filled" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                    <path d="M12 2c5.523 0 10 4.477 10 10a10 10 0 0 1 -19.995 .324l-.005 -.324l.004 -.28c.148 -5.393 4.566 -9.72 9.996 -9.72zm0 9h-1l-.117 .007a1 1 0 0 0 0 1.986l.117 .007v3l.007 .117a1 1 0 0 0 .876 .876l.117 .007h1l.117 -.007a1 1 0 0 0 .876 -.876l.007 -.117l-.007 -.117a1 1 0 0 0 -.764 -.857l-.112 -.02l-.117 -.006v-3l-.007 -.117a1 1 0 0 0 -.876 -.876l-.117 -.007zm.01 -3l-.127 .007a1 1 0 0 0 0 1.986l.117 .007l.127 -.007a1 1 0 0 0 0 -1.986l-.117 -.007z" stroke-width="0" fill="currentColor"></path>
+                </svg>
+                <div id="openingstijden-oba">
+                    <p>
+                        Openingstijden OBA Lineaus:
+                    </p>
+                    <p>
+                        Dinsdag t/m vrijdag tussen 09:30 - 17:30 
+                    </p>
+                    <p>
+                        Zaterdag tussen 11:00 - 17:00
+                    </p>
+                </div>
+            </div>
+            <div id="wrapper-radiobutton-section">
+                <label for="yes_no_radio">Woon je in Amsterdam Oost?</label>
+                <div id="wrapper-radiobuttons">
+                    <p><input type="radio" name="yes_no" checked>Ja</input></p>
+                    <p><input type="radio" name="yes_no">Nee</input></p>
+                    <p><input type="radio" name="yes_no">Zeg ik liever niet</input></p>
+                </div>
+            </div>
+
+            <input type="submit" value="Reserveren" /> 
+    
+        </fieldset>
+    </form>
+
+
+    <button id="button-back-to-homepage"><a href="/">Terug naar homepage</a></button>
+    </div>
+    
+    
+
+
+
+
+
+
+<%- include('./partials/foot.ejs') %>
