@@ -1,2 +1,154 @@
 <%- include('./partials/head.ejs') %>
+<main>
+    <h2>Doneer een plantje</h2>
+    <article>
+        <h4>Hulp nodig met het identificeren van je plantje? </h4>
+        <p>misschien kunnen deze linkjes je helpen:</p>
+        <section class="info-links">
+            <a href="https://identify.plantnet.org">indentify plantnet</a>
+            <a href="https://www.apartmenttherapy.com/features/houseplant-guide-encyclopedia"> houseplant enyclopedia</a>
+        </section>
+    </article>
+    <form id="regForm" action="">
+        <!-- elke tab class is 1 section/stap van de multi step from.  -->
+        <section class="tab">
+            <h3> Gegevens plant</h3>
+    
+            <label for="naam">Plant naam</label>
+            <input type="text" name="naam" id="naam">
+    
+            <label for="landvanherkomst">Land van herkomst</label>
+            <select name="landvanherkomst" id="landvanherkomst">
+         <!-- placeholder is selected en disable -->
+                <option value="" disabled selected>Land van herkomst</option>
+                <option value="Argentina">Argentinië</option>
+                <option value="Bolivia">Bolivia</option>
+                <option value="Brazil">Brazilië</option>
+                <option value="Chile">Chili</option>
+                <option value="Colombia">Colombia</option>
+                <option value="Ecuador">Ecuador</option>
+                <option value="Falkland Islands (Malvinas)">Falklandeilanden (Malvinas)</option>
+                <option value="French Guiana">Frans Guyana</option>
+                <option value="Guyana">Guyana</option>
+                <option value="Paraguay">Paraguay</option>
+                <option value="Peru">Peru</option>
+                <option value="Suriname">Suriname</option>
+                <option value="Uruguay">Uruguay</option>
+                <option value="Venezuela">Venezuela</option>
+                </select>
+        </section>
+
+        <section class="tab">
+        <h3> Verzorging plant</h3>
+        
+        <label for="verpotten">verpotten</label>
+        <input type="text" name="verpotten" id="verpotten">
+
+        <label for="standplaats">Standplaats</label>
+        <input type="text" name="standplaats" id="standplaats">
+
+        <label for="giftig">Giftig</label>
+        <input type="text" name="giftig" id="giftig">
+
+        <label for="voeding">voeding</label>
+        <input type="text" name="voeding" id="voeding">
+    </section>
+       
+        <section class="tab">
+              <h3> Upload plant plant</h3>
+            <!--  accepteer alleen img files door het neet te geven in de accept tag -->
+             <input type="file" name="fotos" id="fotos" accept="image/*"  >
+            </select>
+        </section>
+    
+        
+        <div style="overflow:auto;">
+          <div class="buttons" style="float:right;">
+            <button type="button" id="prevBtn" onclick="nextPrev(-1)">Terug</button>
+            <button type="button" id="nextBtn" onclick="nextPrev(1)">Volgende stap</button>
+          </div>
+        </div>
+        
+        <!-- progressie cirkels -->
+        <div style="text-align:center;margin-top:40px;">
+          <span class="step"></span>
+          <span class="step"></span>
+          <span class="step"></span>
+        </div>
+        
+        </form>
+</main>
+
+
     <%- include('./partials/foot.ejs') %>
+    <script>
+
+var currentTab = 0; // eerste tab staat altijd op 0
+showTab(currentTab); 
+
+function showTab(n) {
+  // alle tab staan uit en worden gecativeerd op basis van de aantal clicks
+  var x = document.getElementsByClassName("tab");
+  x[n].style.display = "block";
+  if (n == 0) {
+    document.getElementById("prevBtn").style.display = "none";
+  } else {
+    document.getElementById("prevBtn").style.display = "inline";
+  }
+  if (n == (x.length - 1)) {
+    document.getElementById("nextBtn").innerHTML = "Plantje doneren";
+  } else {
+    document.getElementById("nextBtn").innerHTML = "Volgende Stap";
+  }
+  // op basis van het aantal click worden de bollen gekleured
+  fixStepIndicator(n)
+}
+
+function nextPrev(n) {
+  // huidige tab op halen
+  var x = document.getElementsByClassName("tab");
+  // als input niet ingevuld is dan kan de gebruiker niewt verder in stappen
+  if (n == 1 && !validateForm()) return false;
+  // verberg huidige tab
+  x[currentTab].style.display = "none";
+  //
+  currentTab = currentTab + n;
+  // verander knop naar plantje doneren als alles ingevuld is 
+  if (currentTab >= x.length) {
+
+    document.getElementById("regForm").submit();
+    return false;
+  }
+  // anders laat correcte tab zien
+  showTab(currentTab);
+}
+
+function validateForm() {
+  var x, y, i, valid = true;
+  x = document.getElementsByClassName("tab");
+  y = x[currentTab].getElementsByTagName("input");
+
+  for (i = 0; i < y.length; i++) {
+
+    if (y[i].value == "") {
+
+      y[i].className += " invalid";
+
+      valid = false;
+    }
+  }
+  if (valid) {
+    document.getElementsByClassName("step")[currentTab].className += " finish";
+  }
+  return valid; 
+}
+
+function fixStepIndicator(n) {
+  var i, x = document.getElementsByClassName("step");
+  for (i = 0; i < x.length; i++) {
+    x[i].className = x[i].className.replace(" active", "");
+  }
+  
+  x[n].className += " active";
+}
+</script>
