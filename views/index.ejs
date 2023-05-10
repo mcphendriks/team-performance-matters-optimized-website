@@ -21,11 +21,11 @@
         </section>
 
 
-        <section class="bar">
+        <aside class="filter-bar">
             <div class="bar-content">
                 <div class="filter-btn">
                     <button type="button">
-                        Filter<span><svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
+                        filter<span><svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
                                 <path fill-rule="evenodd"
                                     d="M1 3.5a.5.5 0 0 1 .5-.5h13a.5.5 0 0 1 0 1h-13a.5.5 0 0 1-.5-.5zM8 6a.5.5 0 0 1 .5.5v5.793l2.146-2.147a.5.5 0 0 1 .708.708l-3 3a.5.5 0 0 1-.708 0l-3-3a.5.5 0 0 1 .708-.708L7.5 12.293V6.5A.5.5 0 0 1 8 6z" />
                             </svg></span>
@@ -33,7 +33,7 @@
                 </div>
                 <div class="drop-content">
                     <ul class="drop-list">
-                        <li>
+                        <li class="drop-li-options">
                             <span>Verzorging</span>
                             <div class="drop-li-options">
                                 <label>
@@ -48,38 +48,42 @@
                                     <input type="radio" name="difficulty" value="true">
                                     <span>Moeilijk</span>
                                 </label>
+                            </div>
                         </li>
+                        <li>
+                            <span>Water</span>
+                            <div class="drop-li-options">
+                                <label>
+                                    <input type="checkbox" checked>
+                                    <span>Veel water</span>
+                                </label>
+                                <label>
+                                    <input type="checkbox" checked>
+                                    <span>Weinig water</span>
+                                </label>
+                            </div>
+                        </li>
+
+                        <li class="drop-li-options">
+                            <span>Standplaats</span>
+                            <div class="drop-li-options">
+                                <label>
+                                    <input type="checkbox" checked>
+                                    <span>Binnenplant</span>
+                                </label>
+                                <label>
+                                    <input type="checkbox" checked>
+                                    <span>Buitenplant</span>
+                                </label>
+                            </div>
+                        </li>
+                    </ul>
                 </div>
-                <li> <span>Water</span>
-                    <div class="drop-li-options">
-                        <label>
-                            <input type="checkbox" checked>
-                            <span>Veel water</span>
-                        </label>
-                        <label>
-                            <input type="checkbox" checked>
-                            <span>Weinig water</span>
-                        </label>
-                </li>
-                <li> <span>Standplaats</span>
-                    <div class="drop-li-options">
-                        <label>
-                            <input type="checkbox" checked>
-                            <span>Binnenplant</span>
-                        </label>
-                        <label>
-                            <input type="checkbox" checked>
-                            <span>Buitenplant</span>
-                        </label>
-                </li>
-            </div>
-            </ul>
-            </div>
-        </section>
+        </aside>
 
 
-        <h2>Ontdek onze collectie van beschikbare planten</h2>
         <section class="plant-container" id="planten">
+            <h2>Ontdek onze collectie van beschikbare planten</h2>
             <% stekjes.forEach(stekje=> { %>
                 <article class="plant-card" aria-label="Beschikbaar stekje">
                     <ul>
@@ -143,9 +147,9 @@
                 <% }) %>
         </section>
 
-        <h2>Plant ophalen?</h2>
 
         <section class="carousel">
+            <h2>Plant ophalen?</h2>
             <div class="slider">
                 <ol class="slides">
                     <li id="slide-1">
@@ -204,9 +208,6 @@
                 <a href="#slide-3">stap 3</a>
                 <a href="#slide-4">stap 4</a>
             </div>
-        </section>
-
-        </div>
         </section>
     </main>
     <%- include('./partials/foot.ejs') %>

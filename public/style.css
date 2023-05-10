@@ -22,7 +22,6 @@ body {
   font-family: "Arial", sans-serif;
 }
 
-plant-filtering
 h1,
 h2 {
   text-align: center;
@@ -213,7 +212,7 @@ main {
 }
 
 /* BAR SECTION  */
-.bar {
+.filter-bar {
   width: 100%;
   padding: 1em 2.5em 1em 2.5em;
 }
