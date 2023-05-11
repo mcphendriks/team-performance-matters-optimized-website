@@ -40,3 +40,14 @@ window.addEventListener("load", function () {
   document.querySelector(".skeleton").classList.toggle("hidden");
   document.querySelector(".skeleton-text").classList.toggle("hidden");
 });
+
+// DROP DOWN FILTER MENUH
+
+document.addEventListener("DOMContentLoaded", () => {
+  const dropButton = document.querySelector(".filter-btn");
+  const dropContent = document.querySelector(".drop-list");
+
+  dropButton.addEventListener("click", () => {
+    dropContent.classList.toggle("show");
+  });
+});
