@@ -1,52 +1,37 @@
-main{
-    margin: 40em;
-}
-h3{
+/* form  */
+.tab > h3{
     margin-bottom: 1em;
 }
-form, input, select, .tab{
+#regForm > input, select, .tab{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     margin: 1em;
     text-align: left;
 }
 .tab {
-    width: 37em;
-    height: 14em;
-    margin: 1em -1em 4em;
+    width: 15%;
+    height: 23em;
+    margin: auto;
+
 }
-button{
-    width: 10em;
-    height: 3em;
-    border-radius: 3px;
-    margin: 2em;
-    margin-top: 4em;
-    margin-bottom: 4em;
+.tab > label{
+  display: flex;
+  flex-direction: row;
+  margin: auto;
+  margin-bottom: 1em;
 }
 
-input, select{
+.tab > input, select {
+  display: flex;
+  flex-direction: row;
+  margin: auto;
+  margin-left: 0em;
+  margin-bottom: 1em;
+
     width: 20em;
     height: 2.5em;
     border-radius: 3px;
     border: 1px solid black;
-}
-
-#fotos {
-    width: 20em;
-    height: 20em;
-    border: 4px solid #000;
-    background-image: url("http://kmtlondon.com/img/upload.png");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: 64px 64px;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-    filter: alpha(opacity=50);
-    -khtml-opacity: 0.5;
-    -moz-opacity: 0.5;
-    opacity: 0.5;
-    text-align: center;
 }
 
 .buttons {
@@ -56,18 +41,26 @@ input, select{
     
 }
 
- 
-  /* Mark input boxes that gets an error on validation: */
-  input.invalid {
+#prevBtn, #nextBtn {
+  width: 10em;
+  height: 3em;
+  border-radius: 3px;
+  margin: 2em;
+  background-color: #F0ECEC;
+  border: 1px solid #000;
+}
+  #regForm > input.invalid {
     background-color: #ffdddd;
   }
   
-  /* Hide all steps by default: */
+
   .tab {
     display: none;
   }
-  
-  /* Make circles that indicate the steps of the form: */
+  /* stap indicator */
+.steps{
+  margin-bottom: 2em;
+}
   .step {
     height: 15px;
     width: 15px;
@@ -78,17 +71,116 @@ input, select{
     display: inline-block;
     opacity: 0.5;
   }
-  
-  /* Mark the active step: */
-  .step.active {
+    .step.active {
     opacity: 1;
   }
   
-  /* Mark the steps that are finished and valid: */
   .step.finish {
     background-color: #4E7141;
   }
+  /* drag and drop */
+  .drop-container {
+    position: relative;
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+    padding: 20px;
+    border-radius: 10px;
+    border: 2px dashed #555;
+    color: #444;
+    cursor: pointer;
+    transition: background .2s ease-in-out, border .2s ease-in-out;
+  }
   
+  .drop-container:hover {
+    background: #eee;
+    border-color: #111;
+  }
+  
+  .drop-container:hover .drop-title {
+    color: #222;
+  }
+  
+  .drop-title {
+    color: #444;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    transition: color .2s ease-in-out;
+  }
+  .tab > label{
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    margin-bottom: 1em;
+  }
+  
+  input[type=file] {
+    width: 10em;
+    max-width: 100%;
+    color: #444;
+    padding: 5px;
+    background: #fff;
+    border-radius: 10px;
+    border: 1px solid #555;
+  }
+  
+  input[type=file]::file-selector-button {
+    margin-right: 20px;
+    border: none;
+    background: #4E7141;
+    padding: 10px 20px;
+    border-radius: 10px;
+    color: #fff;
+    cursor: pointer;
+    transition: background .2s ease-in-out;
+  }
+  
+  input[type=file]::file-selector-button:hover {
+    background: #4E7141;
+  }
+
+#file-upload-button{
+  background-color: #4E7141;
+}
+/* info */
+.plantNewInfo{
+  width: 25%;
+  height: 12.5em;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  padding: 2em;
+  margin-bottom: 3em;
+  text-align: center;
+  background-color: #4e71416e;
+  border: 1px solid #4E7141;
+  border-radius: 3px;
+}
+
+.infoLinks{
+  display: flex;
+  align-content: space-between;
+  flex-direction: row;
+  margin: auto;
+}
+.infoLinks > button {
+    width: 10em;
+    height: 3em;
+    border-radius: 3px;
+    margin: 1em;
+ 
+    background-color: #4e71416e;
+    border: 1px solid #4E7141;
+}
+
+.infoLinks > button > a { 
+  color: #000;
+  text-decoration: none;
+}
 
 
 
