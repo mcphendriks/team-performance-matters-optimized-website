@@ -277,4 +277,5 @@ indexRoute.get("/", (request, response) => {
 });
 
 
-export default indexRoute; //exporteert de route in het server.js mapje -> import indexRoute from "./routes/index.js";
+export default indexRoute;
+//exporteert de route in het server.js mapje -> import indexRoute from ./routes/index.js

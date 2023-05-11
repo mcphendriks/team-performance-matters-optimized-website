@@ -1,12 +1,12 @@
 <%- include('./partials/head.ejs') %>
 <main>
     <h2>Doneer een plantje</h2>
-    <article>
+    <article class="plantNewInfo">
         <h4>Hulp nodig met het identificeren van je plantje? </h4>
         <p>misschien kunnen deze linkjes je helpen:</p>
-        <section class="info-links">
-            <a href="https://identify.plantnet.org">indentify plantnet</a>
-            <a href="https://www.apartmenttherapy.com/features/houseplant-guide-encyclopedia"> houseplant enyclopedia</a>
+        <section class="infoLinks">
+            <button><a href="https://identify.plantnet.org">Indentify plantnet</a> </button>
+            <button><a href="https://www.apartmenttherapy.com/features/houseplant-guide-encyclopedia"> Houseplant enyclopedia</a></button>
         </section>
     </article>
     <form id="regForm" action="">
@@ -57,7 +57,11 @@
         <section class="tab">
               <h3> Upload plant plant</h3>
             <!--  accepteer alleen img files door het neet te geven in de accept tag -->
-             <input type="file" name="fotos" id="fotos" accept="image/*"  >
+            <label for="images" class="drop-container">
+              <span class="drop-title">Drop files here</span>
+              or
+              <input type="file" id="images" accept="image/*" required>
+            </label>
             </select>
         </section>
     
@@ -70,7 +74,7 @@
         </div>
         
         <!-- progressie cirkels -->
-        <div style="text-align:center;margin-top:40px;">
+        <div class="steps" style="text-align:center;margin-top:40px;">
           <span class="step"></span>
           <span class="step"></span>
           <span class="step"></span>
