@@ -232,7 +232,7 @@ main {
   border-radius: var(--radius-btn);
 }
 
-.bar svg {
+.filter-bar svg {
   width: 25px;
   aspect-ratio: 1/1;
   fill: #fff;
