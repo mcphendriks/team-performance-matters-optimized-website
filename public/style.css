@@ -2,7 +2,7 @@
   --bg-clr: #f7fbf6;
   --text-title-clr: #2c4c1c;
   --text-paragraph-clr: #2c4c1c;
-  --filter-bg-clr: #f26f20;
+  --filter-bg-clr: rgb(219, 75, 2);
   --filter-text-clr: #fff;
   --link-btn-clr: #2c4c1c;
   --link-nav-clr: #2c4c1c;
@@ -281,7 +281,7 @@ main {
 }
 
 .plant-card:hover {
-  transform: scale(0.9);
+  /* transform: scale(0.9); */
   box-shadow: 0px 1px 35px 0px rgba(0, 0, 0, 0.3);
   -webkit-box-shadow: 0px 1px 35px 0px rgba(0, 0, 0, 0.3); /* Safari 6, iOS 6 and Android 2.3 default browser don't work with a 0px value for "blur-radius".*/
   -moz-box-shadow: 0px 1px 35px 0px rgba(0, 0, 0, 0.3); /*is for older versions of Mozilla Firefox before version 4.*/
